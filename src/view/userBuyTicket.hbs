@@ -1,0 +1,40 @@
+<h1 style='text-align: center ; margin-top: 40px'>DANH SÁCH KHÁCH ĐÃ ĐẶT VÉ</h1>
+
+<table class='table mt-4'>
+  <thead>
+    <tr>
+      <th scope='col'>#</th>
+      <th scope='col'>User Name</th>
+      <th scope='col'>Trận Đấu</th>
+      <th scope='col'>Ngày Thi Đấu</th>
+      <th scope='col'>Loại vé</th>
+      <th scope='col'>Số vé</th>
+      <th scope='col'>Tổng Tiền</th>
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each userbuyticket}}
+      <tr>
+        <th scope='row'>{{sum @index 1}}</th>
+        <td>{{this.userName}}</td>
+        <td>{{this.clb}}</td>
+        <td>{{this.day}}</td>
+        <td>{{this.nameTicket}}</td>
+        <td>{{this.countTicket}}</td>
+        <td>{{this.price}}</td>
+        <td><a href='/manage/confirmTicket/{{this._id}}'><button
+              type='button'
+              class='btn btn-danger'
+              data-bs-toggle='modal'
+              data-bs-target='#delete-ticket-model'
+              data-id=''
+            >Xác Nhận Vé</button></a></td>
+
+      </tr>
+
+    {{/each}}
+
+  </tbody>
+</table>
